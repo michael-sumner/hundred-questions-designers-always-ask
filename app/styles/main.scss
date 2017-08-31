@@ -1,0 +1,161 @@
+@import "color";
+@import "variables";
+// bower:scss
+@import "bower_components/bootstrap/scss/bootstrap.scss";
+// endbower
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+
+}
+body {
+  height: inherit;
+  position: relative;
+  background-image: linear-gradient(45deg, $color__uv-jasmine, $color__uv-blue);
+  background-size: cover;
+  color: $color__white;
+  overflow-x: inherit;
+  width: 100%;
+}
+a {
+  color: inherit;
+  border-bottom: 1px solid;
+  padding-left: .2em;
+  padding-right: .2em;
+}
+header {
+  margin-bottom: 1.5rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 1.5rem;
+  width: 100%;
+  opacity: .33;
+  transition: opacity .3s ease-out;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+}
+h1 {
+  font-weight: bold;
+  @include media-breakpoint-down('md') {
+    font-size: 1.5rem;
+
+  }
+}
+/* Space out content a bit */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  > .row {
+    @include media-breakpoint-up('sm') {
+      height: 30vh;
+
+    }
+  }
+}
+footer {
+  font-weight: lighter;
+  font-size: 12px;
+}
+.logo {
+  max-width: 64px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  border-bottom: 0;
+  @include media-breakpoint-up('lg') {
+    max-width: 160px;
+  }
+}
+.designer-question {
+  font-weight: bold;
+  font-size: 1.5rem;
+  hyphens: auto;
+  @include media-breakpoint-up('sm') {
+    hyphens: none;
+    font-size: 2.5rem;
+
+  }
+  @include media-breakpoint-up('lg') {
+    font-size: 3.5rem;
+
+  }
+  > span {
+    display: block;
+    @include media-breakpoint-up('sm') {
+      display: initial;
+    }
+  }
+}
+.bg-quote-container {
+  z-index: -1;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.bg-quote {
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  white-space: nowrap;
+  opacity: .2;
+  animation-duration: 300s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  @for $i from 1 through 26 {
+    &:nth-of-type(#{$i}) {
+      top: random(100) + %;
+      left: random(100) + %;
+      filter: blur(random(5) + px);
+      animation-name: bgquotefloating#{$i};
+    }
+  }
+}
+@for $i from 1 through 26 {
+  @keyframes bgquotefloating#{$i} {
+    0% {
+      top: random(100) + %;
+      left: random(100) + %;
+    }
+    14.29% {
+      top: random(100) + %;
+      left: random(100) + %;
+    }
+    28.58% {
+      top: random(100) + %;
+      left: random(100) + %;
+    }
+    42.87% {
+      top: random(100) + %;
+      left: random(100) + %;
+    }
+    57.16% {
+      top: random(100) + %;
+      left: random(100) + %;
+    }
+    89.29% {
+      top: random(100) + %;
+      left: random(100) + %;
+    }
+    100% {
+      top: random(100) + %;
+      left: random(100) + %;
+    }
+  }
+
+}
